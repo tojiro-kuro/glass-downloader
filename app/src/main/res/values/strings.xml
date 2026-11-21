@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">GlassDown</string>
+    <string name="paste_link">Pega un enlace de video</string>
+    <string name="resolve">Analizar</string>
+    <string name="download">Descargar</string>
+    <string name="downloads">Descargas</string>
+    <string name="no_downloads">No hay descargas todavía</string>
+    <string name="select_quality">Selecciona la calidad</string>
+    <string name="downloading">Descargando…</string>
+    <string name="completed">Completada</string>
+    <string name="failed">Falló</string>
+    <string name="cancel">Cancelar</string>
+    <string name="retry">Reintentar</string>
+    <string name="notification_channel">Descargas</string>
+    <string name="notification_channel_desc">Progreso de descargas de video</string>
+    <string name="paste_hint">https://…</string>
+    <string name="empty_url">Pega un enlace primero</string>
+    <string name="resolving">Analizando enlace…</string>
+    <string name="no_formats">No se encontraron formatos disponibles</string>
+    <string name="unknown_title">Video sin título</string>
+    <string name="share">Compartir</string>
+    <string name="open">Abrir</string>
+</resources>
