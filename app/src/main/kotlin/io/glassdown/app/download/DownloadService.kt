@@ -19,6 +19,7 @@ import androidx.core.app.NotificationCompat
 import io.glassdown.app.R
 import io.glassdown.app.data.DownloadStatus
 import io.glassdown.app.data.DownloadTask
+import io.glassdown.app.extract.NewPipeDownloader
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

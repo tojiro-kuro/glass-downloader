@@ -21,8 +21,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.input.pointer.PointerEventPass
-import androidx.compose.ui.input.pointer.awaitPointerEventScope
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
+import androidx.compose.foundation.gestures.waitForUpOrCancellation
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -97,12 +98,11 @@ fun Modifier.glassEffect(
 
     if (interactive) {
         modifier = modifier.pointerInput(Unit) {
-            awaitPointerEventScope {
-                while (true) {
-                    val event = awaitPointerEvent(PointerEventPass.Initial)
-                    val change = event.changes.firstOrNull() ?: continue
-                    pressOffset.value = if (change.pressed) change.position else null
-                }
+            awaitEachGesture {
+                val down = awaitFirstDown(requireUnconsumed = false)
+                pressOffset.value = down.position
+                waitForUpOrCancellation()
+                pressOffset.value = null
             }
         }
     }

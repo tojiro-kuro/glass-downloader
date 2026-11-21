@@ -33,7 +33,7 @@ object ExtractorRepository {
 
             VideoInfo(
                 title = info.name?.takeIf { it.isNotBlank() } ?: "Video sin título",
-                thumbnailUrl = info.thumbnails.maxByOrNull { it.height }?.url ?: info.thumbnailUrl,
+                thumbnailUrl = info.thumbnails.maxByOrNull { it.height }?.url,
                 durationSeconds = info.duration.coerceAtLeast(0L),
                 uploader = info.uploaderName?.takeIf { it.isNotBlank() },
                 sourceUrl = cleanUrl,
